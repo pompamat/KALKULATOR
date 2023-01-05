@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import java.math.RoundingMode
+import kotlin.math.sqrt
 
 class MainActivity : AppCompatActivity() {
 
@@ -59,6 +60,7 @@ class MainActivity : AppCompatActivity() {
             "-" -> wynik = sub(liczba1,liczba2)
             "*" -> wynik = mul(liczba1,liczba2)
             "/" -> wynik = div(liczba1,liczba2)
+
         }
         ow.text = wynik
         liczba1 = ""
@@ -78,10 +80,36 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    fun onClickPlusMinus(view: View) {
+        val ow = findViewById<TextView>(R.id.outputWindow)
+        val tekstbezminusa = ow.text.toString()
+        //"-" + tekstbezminusa
+        if(!tekstbezminusa.contains("-", true)) {
+            ow.text = "-" + tekstbezminusa
+        }
+        if(tekstbezminusa.contains("-", true)) {
+            ow.text = tekstbezminusa.substring(1,tekstbezminusa.length)
+        }
+
+
+
+    }
+    //to nie tak ma dzialac
+    //juz lepiej ale problem z zerem na poczatku
+
     fun onClickC(view: View) {
         val ow = findViewById<TextView>(R.id.outputWindow)
         ow.text = ""
     }
+
+    fun onClickCE(view: View) {
+        val ow = findViewById<TextView>(R.id.outputWindow)
+        val stara = ow.text.toString()
+        //stara.substring(0,0)
+        ow.text = stara.substring(0,0)
+    }
+    // tutaj chyba działa
+
 
 
     fun onClickBack(view: View) {
@@ -105,6 +133,5 @@ class MainActivity : AppCompatActivity() {
     fun div(l1: String, l2: String):String {
         return l1.toBigDecimal().divide(l2.toBigDecimal(),10, RoundingMode.HALF_UP).toPlainString()
     }
-
 
 }

@@ -38,11 +38,12 @@
                 android:text="C" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/buttonCE"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:onClick="onClickCE"
+                android:text="CE" />
 
             <Button
                 android:id="@+id/buttonBack"
@@ -60,7 +61,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/button1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -76,11 +77,12 @@
                 android:text="2" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/button3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:onClick="onClickDigit"
+                android:text="3" />
 
             <Button
                 android:id="@+id/buttonPlus"
@@ -99,25 +101,28 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/button4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:onClick="onClickDigit"
+                android:text="4" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/button5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:onClick="onClickDigit"
+                android:text="5" />
 
             <Button
                 android:id="@+id/button4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:onClick="onClickDigit"
+                android:text="6" />
 
             <Button
                 android:id="@+id/buttonMinus"
@@ -136,25 +141,28 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/button7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:onClick="onClickDigit"
+                android:text="7" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/button8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:onClick="onClickDigit"
+                android:text="8" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/button9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:onClick="onClickDigit"
+                android:text="9" />
 
             <Button
                 android:id="@+id/buttonMul"
@@ -172,18 +180,20 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/buttonplusminus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:onClick="onClickPlusMinus"
+                android:text="+/-" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/button0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:onClick="onClickDigit"
+                android:text="0" />
 
             <Button
                 android:id="@+id/buttonDot"
