@@ -72,7 +72,9 @@ class MainActivity : AppCompatActivity() {
         val ow = findViewById<TextView>(R.id.outputWindow)
         val tekstbezkropki = ow.text.toString()
         //tekstbezkropki + "."
-        ow.text = tekstbezkropki + "."
+        if(!tekstbezkropki.contains(".", true)){
+            ow.text = tekstbezkropki + "."
+        }
 
     }
 
