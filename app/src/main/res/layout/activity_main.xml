@@ -30,10 +30,11 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/buttonC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="onClickC"
                 android:text="C" />
 
             <Button
@@ -49,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="onClickBack"
-                android:text="<--" />
+                android:text="←" />
         </LinearLayout>
 
         <LinearLayout

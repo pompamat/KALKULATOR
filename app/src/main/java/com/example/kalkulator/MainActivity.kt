@@ -76,6 +76,12 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    fun onClickC(view: View) {
+        val ow = findViewById<TextView>(R.id.outputWindow)
+        ow.text = ""
+    }
+
+
     fun onClickBack(view: View) {
         //ow.text.toString() zczytuje
         val ow = findViewById<TextView>(R.id.outputWindow)
