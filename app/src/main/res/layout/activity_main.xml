@@ -219,11 +219,12 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/buttonsqrt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:onClick="onClickSqrt"
+                android:text="√" />
 
             <Button
                 android:id="@+id/button2"

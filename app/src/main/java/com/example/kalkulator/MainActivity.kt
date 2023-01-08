@@ -134,4 +134,14 @@ class MainActivity : AppCompatActivity() {
         return l1.toBigDecimal().divide(l2.toBigDecimal(),10, RoundingMode.HALF_UP).toPlainString()
     }
 
+    fun onClickSqrt(view: View) {
+        val ow = findViewById<TextView>(R.id.outputWindow)
+        val pierw = ow.text.toString()
+        ow.text = squareroot(pierw)
+    }
+
+    fun squareroot(l1: String):String {
+        return sqrt(l1.toDouble()).toString()
+    }
+
 }
