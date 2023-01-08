@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import java.math.RoundingMode
+import kotlin.math.pow
 import kotlin.math.sqrt
 
 class MainActivity : AppCompatActivity() {
@@ -48,6 +49,7 @@ class MainActivity : AppCompatActivity() {
             R.id.buttonMinus -> operator = "-"
             R.id.buttonMul -> operator = "*"
             R.id.buttonDiv -> operator = "/"
+            R.id.buttonPotega -> operator ="xʸ"
         }
         isOpJustPressed = true
     }
@@ -61,6 +63,7 @@ class MainActivity : AppCompatActivity() {
             "-" -> wynik = sub(liczba1,liczba2)
             "*" -> wynik = mul(liczba1,liczba2)
             "/" -> wynik = div(liczba1,liczba2)
+            "xʸ" -> wynik = potega(liczba1,liczba2)
 
         }
         ow.text = wynik
@@ -133,6 +136,9 @@ class MainActivity : AppCompatActivity() {
     }
     fun div(l1: String, l2: String):String {
         return l1.toBigDecimal().divide(l2.toBigDecimal(),10, RoundingMode.HALF_UP).toPlainString()
+    }
+    fun potega(l1: String, l2: String):String {
+        return (l1.toDouble().pow(l2.toDouble())).toString()
     }
 
     fun onClickSqrt(view: View) {
