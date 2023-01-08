@@ -232,14 +232,17 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="onClickOperator"
-                android:text="xʸ" />
+                android:text="xʸ"
+                android:textAllCaps="false" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/buttonexp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:onClick="onClickExp"
+                android:text="eˣ"
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/buttonEqual"

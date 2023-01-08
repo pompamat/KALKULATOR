@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import java.math.RoundingMode
+import kotlin.math.exp
 import kotlin.math.pow
 import kotlin.math.sqrt
 
@@ -43,7 +44,21 @@ class MainActivity : AppCompatActivity() {
 
     fun onClickOperator(view: View) {
         val ow = findViewById<TextView>(R.id.outputWindow)
-        liczba1 = ow.text.toString()
+        if(operator!=""){
+            val liczbatmp = ow.text.toString()
+            when (operator) {
+                "+" -> wynik = add(liczba1, liczbatmp)
+                "-" -> wynik = sub(liczba1, liczbatmp)
+                "*" -> wynik = mul(liczba1, liczbatmp)
+                "/" -> wynik = div(liczba1, liczbatmp)
+                "xʸ" -> wynik = potega(liczba1, liczbatmp)
+            }
+            liczba1 = wynik
+
+        }
+        else{
+            liczba1 = ow.text.toString()
+        }
         when (view.id) {
             R.id.buttonPlus -> operator = "+"
             R.id.buttonMinus -> operator = "-"
@@ -56,22 +71,23 @@ class MainActivity : AppCompatActivity() {
 
 
     fun onClickEqual(view: View) {
-        val ow = findViewById<TextView>(R.id.outputWindow)
-        liczba2 = ow.text.toString()
-        when (operator) {
-            "+" -> wynik = add(liczba1,liczba2)
-            "-" -> wynik = sub(liczba1,liczba2)
-            "*" -> wynik = mul(liczba1,liczba2)
-            "/" -> wynik = div(liczba1,liczba2)
-            "xʸ" -> wynik = potega(liczba1,liczba2)
+        if(operator!="") {
+            val ow = findViewById<TextView>(R.id.outputWindow)
+            liczba2 = ow.text.toString()
+            when (operator) {
+                "+" -> wynik = add(liczba1, liczba2)
+                "-" -> wynik = sub(liczba1, liczba2)
+                "*" -> wynik = mul(liczba1, liczba2)
+                "/" -> wynik = div(liczba1, liczba2)
+                "xʸ" -> wynik = potega(liczba1, liczba2)
 
+            }
+            ow.text = wynik
+            liczba1 = ""
+            liczba2 = ""
+            operator = ""
+            isOpJustPressed = true //zeby 'wyczyscic' ekran po dzialaniu
         }
-        ow.text = wynik
-        liczba1 = ""
-        liczba2 = ""
-        operator = ""
-        isOpJustPressed = true //zeby 'wyczyscic' ekran po dzialaniu
-
     }
 
     fun onClickDot(view: View) {
@@ -106,6 +122,7 @@ class MainActivity : AppCompatActivity() {
         liczba1 = ""
         liczba2 = ""
         operator = ""
+        wynik = ""
         ow.text = ""
     }
 
@@ -149,6 +166,16 @@ class MainActivity : AppCompatActivity() {
 
     fun squareroot(l1: String):String {
         return sqrt(l1.toDouble()).toString()
+    }
+
+    fun onClickExp(view: View) {
+        val ow = findViewById<TextView>(R.id.outputWindow)
+        val wykladnik = ow.text.toString()
+        ow.text = edox(wykladnik)
+    }
+
+    fun edox(l1: String):String {
+        return exp(l1.toDouble()).toString()
     }
 
 }
