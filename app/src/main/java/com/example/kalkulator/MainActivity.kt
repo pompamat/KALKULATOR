@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         }
         var tekst:String = ""+ow.text
         if (tekst=="0") tekst="";
+        if (tekst=="-0") tekst="-";
         ow.text = tekst+(view as Button).text
     }
 
@@ -99,16 +100,16 @@ class MainActivity : AppCompatActivity() {
 
     fun onClickC(view: View) {
         val ow = findViewById<TextView>(R.id.outputWindow)
+        liczba1 = ""
+        liczba2 = ""
+        operator = ""
         ow.text = ""
     }
 
     fun onClickCE(view: View) {
         val ow = findViewById<TextView>(R.id.outputWindow)
-        val stara = ow.text.toString()
-        //stara.substring(0,0)
-        ow.text = stara.substring(0,0)
+        ow.text = ""
     }
-    // tutaj chyba działa
 
 
 
